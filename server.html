@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet">
+    <title>Формы</title>
+  </head>
+
+  <body>
+    <div class="container">
+    <div id="nav-placeholder" class="navigation"></div>
+    <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
+    <div class="content">
+    <h1>Формы. Отправляем данные на сервер</h1>
+      <h3>Личные данные</h3>
+      <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <p>Для поисковика:<input type="hidden" name="q" value="search"></p>
+        <p>Фамилия: <input type="Text" name="last_name" class="button field" value="Ефремова"></p>
+        <p>Имя: <input type="Text" name="first_name" class="button field" value="Мария"></p>
+        <p>Группа: <input type="Number" name="group" class="button field" value="5"></p>
+        <p>Мобильный телефон: <input type="Number" class="button field"></p>
+        <p>E-mail:<input type="Text" name="email" class="button field" value="maalefremova@edu.hse.ru"></p>
+        <p>Дата: <input type="date" name="user_date" class="button field" value="2024-11-06"></p>
+        <p align="right">
+          <input type="Reset" name="Reset" class="button" value="Обновить">
+          <input type="Submit" name="submit"class="button" value="Отправить">
+        </p>
+      </form>
+        <h3>Оставить воспоминание</h3>
+        <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <p>Место проишествия:
+            <input type="Radio" name="place" value="real" checked="">Реальность
+            <input type="Radio" name="place" value="dream">Сон
+            <input type="Radio" name="place" value="imagination">Воображение
+        </p>
+    
+        <p>Лица:
+            <input type="Checkbox" name="people" value="me" checked="">Я
+            <input type="Checkbox" name="people" value="yourself" checked="">Вы сами
+            <input type="Checkbox" name="people" value="ppl_i_know" checked="">Мои знакомые
+        </p>
+    
+        <p>Настроение воспоминания:
+            <select name="languages" class="button field" style="cursor: pointer;">
+                <option value="loving">Любящее</option>
+                <option value="hateful">Ненавистное</option>
+                <option value="confused">Растеряное</option>
+                <option value="calming">Успокаивающее</option>
+            </select>
+        </p>
+        <p>Оценка воспоминания: <input type="number" name="rating" value="5" class="button field"></p>
+        <p> Описание воспоминания:
+            <br>
+            <textarea cols="60" rows="4" name="textarea" class="button field">Детали</textarea>
+        </p>
+    
+        <p>Секретное слово: <input type="Password" name="password" size="9" class="button field" value="понимание"></p>
+        <p>Дата произошедшего: <input type="date" name="user_date" class="button field" value="2005-12-27"></p>
+
+        <!--Все нижерасположенные фрагменты перемещать нельзя, редактировать можно--> 
+        <input type="hidden" name="form_version" value="v1.0">
+
+        <p align="right">
+          <input type="Reset" name="Reset" class="button" value="Обновить">
+          <input type="Submit" name="submit"class="button" value="Отправить">
+        </p>
+    </form>
+    </div>
+    <button onclick="topFunction()" id="btn" title="Go to top"></button>  
+    </div>
+    <script>
+      function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+      function bottomFunction() {
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
+      }
+      </script>
+    <script>
+        fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+      
+            // Get the current path without the leading "/"
+            const currentPage = window.location.pathname.split("/").pop();
+      
+            // Iterate over each link in the navigation
+            document.querySelectorAll(".nav-item").forEach(function(link) {
+              // Get the last part of the href (for comparison with current page)
+              const linkHref = link.getAttribute("href").split("/").pop();
+      
+              // If the href matches the current page, add the "active" class
+              if (linkHref === currentPage) {
+                link.classList.add("active");
+              }
+            });
+          });
+      </script>
+    </body>
+</html>

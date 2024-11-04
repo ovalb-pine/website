@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet">
+    <title>The Space</title>
+  </head>
+
+  <body>
+    
+    <div class="container">
+      
+      <div id="nav-placeholder" class="navigation"></div>
+      <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
+      <div class="content">
+        <h1>The Space</h1>
+        <center><i style="border-bottom: 1px solid rgb(105, 138, 183);"> HOME IS WHERE YOU ARE</i></center>
+        <p>Welcome to my personal website. Here, you may click through 
+          the gallery of my memories. Just use the navigation bar on the left.</p>
+        <!-- <p>1013. Даны вещественные числа X и Y . Вычислить Z. Z = XY при 
+          X > Y ,Z = ln(X + Y ) в противном случае.</p> -->
+        <img src="img/forest.jpg">
+        <h3>Photo of The Day</h3>
+        <table class="custom-table">
+          <tr>
+            <th>Photo</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td class="image-cell"><a href="#" onclick="openImage('img/white.jpg'); return false;">
+              <img src="img/white.jpg" alt="Snowy Road"></td>
+            <td><a href="people.html#ExhibitA">Exhibit A</a></td>
+            <td>04.04.2023</td>
+            <td>Road covered in snow</td>
+          </tr>
+        </table>
+      </div>
+      <button onclick="topFunction()" id="btn" title="Go to top"></button>
+    </div>
+
+
+    <script>
+      function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+      function bottomFunction() {
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
+      }
+      function openImage(url) {
+      window.open(url, '_blank', 'width=600,height=400,top=' + (screen.height/2 - 200) + ',left=' + (screen.width/2 - 300));
+      }
+    </script>
+
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+    
+          // Get the current path without the leading "/"
+          const currentPage = window.location.pathname.split("/").pop();
+    
+          // Iterate over each link in the navigation
+          document.querySelectorAll(".nav-item").forEach(function(link) {
+            // Get the last part of the href (for comparison with current page)
+            const linkHref = link.getAttribute("href").split("/").pop();
+    
+            // If the href matches the current page, add the "active" class
+            if (linkHref === currentPage) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+    
+    </div>
+  </body>
+</html>

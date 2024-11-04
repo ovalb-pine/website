@@ -1,0 +1,250 @@
+body {
+  font-family: "Alegreya", serif;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+}
+
+p {
+  text-indent: 5%;
+}
+h1 {
+  text-align: center;
+  color:rgb(105, 138, 183)
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.passport-overlay {
+  position: relative;
+  display: inline-block;
+}
+
+.navigation {
+  width: 25%
+}
+.content {
+  width: 65%;
+}
+.passport-overlay {
+  position: relative;
+  display: inline-block;
+  max-width: 500px; /* Set a max width for responsiveness */
+  width: 100%; /* Allow it to scale with window */
+}
+
+/* Make the overlay container responsive */
+.passport-overlay {
+  position: relative;
+  display: inline-block;
+  max-width: 500px; /* Set a maximum width for responsiveness */
+  width: 100%; /* Allow it to scale with the window */
+}
+
+/* Ensure the image is responsive */
+.passport-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive text styling */
+.passport-text {
+  position: absolute;
+  font-size: 1em;
+  color: black;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+/* Profile photo positioning */
+.passport-photo {
+  position: absolute;
+  width: 28%;
+  height: 24%;
+  top: 73%; /* Adjust based on image layout */
+  left: 19%; /* Adjust as needed */
+  transform: translate(-50%, -50%);
+}
+
+.button{
+  position: sticky; /* Fixed/sticky position */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: 0.1rem solid;
+  outline-color: rgb(105, 138, 183); /* Remove outline */
+  background-color: rgb(0, 0, 0); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 10px; /* Some padding */
+  border-radius: 7px; /* Rounded corners */
+  font-size: 16px; /* Increase font size */
+  margin-left: 5%;
+}
+
+.span.text{
+  margin-left: 5%;
+}
+
+.button.field:hover{
+  background-color: rgb(0, 0, 0); /* Set a background color */
+  cursor: text;
+}
+
+.button:hover{
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+#btn {
+  display: 2; /* Hidden by default */
+  position: sticky; /* Fixed/sticky position */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: 0.1rem solid;
+  outline-color: rgb(105, 138, 183); /* Remove outline */
+  background-color: rgb(0, 0, 0); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 10px; /* Some padding */
+  border-radius: 7px; /* Rounded corners */
+  font-size: 16px; /* Increase font size */
+}
+
+#btn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.nav-item.active {
+  font-weight: bold;
+  color: rgb(105, 138, 183);
+}
+
+
+.nav-item.small {
+  font-style: italic;
+  font-size: 18px;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  
+}
+
+
+.column img {
+  margin-top: 5px;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li{
+  margin-bottom: 3%;
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 1em;
+}
+ol li {
+  display: flex;
+  align-items: center; /* Ensures vertical centering */
+  margin: 5px 0;
+}
+
+ol li::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../img/star.png");
+  background-size: contain; /* Ensures the image scales correctly */
+  width: 15px; /* Icon width */
+  height: 15px; /* Icon height */
+  margin-right: 10px; /* Space between icon and text */
+}
+a {
+  color: white; /* Set your desired default link color */
+}
+
+a:visited {
+  color: white; /* Ensure visited links remain the same color */
+}
+
+a:hover {
+  color: rgb(105, 138, 183);
+}
+
+a:active {
+  color: rgb(105, 138, 183);
+}
+
+img {
+  max-width: 100%;      /* Image will scale with the container */
+  height: auto;
+}
+
+nav {
+  position: sticky;
+  top: 0; /* This ensures it sticks to the top of the viewport */
+  z-index: 1000; /* Keeps the nav on top of other elements */
+  background-color: #000000; /* Set a background so it doesn't overlap content */
+  border-bottom: 1px solid rgb(105, 138, 183); /* Optional: adds a bottom border */
+  padding: 10px; /* Optional: padding for space inside the nav */
+}
+
+.bookmark-row {
+display: flex;
+justify-content: center;
+}
+
+.bookmark-row a {
+  margin: 0 10px; 
+}
+
+.custom-table {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  position: relative; /* Установите относительное позиционирование для таблицы */
+  background-image: url("../img/weezer.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Поверхность для текста */
+}
+
+.custom-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.845); /* Полупрозрачный черный слой */
+  z-index: -1; /* Помещает слой за содержимым таблицы */
+}
+
+
+.custom-table td, .custom-table th {
+  border: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+}
+
+
+.image-cell img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}

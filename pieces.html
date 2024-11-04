@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet">
+    <title>The Space</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="nav-placeholder" class="navigation"></div>
+      <div class="content">
+        <h1>Pieces</h1>
+        <h2 id="SceneA">Text A</h2>
+        <div class="container">
+          <div class="content" style="font-size: medium;">The battle begins when you open your eyes<br>
+            And continues until you close them at night<br>
+            Sometimes not even then does it end because these feelings carry on into your dreaming<br>
+            Only for you to wake up and to begin again<br>
+            Your enemy is yourself<br>
+            And also, not yourself, see<br>
+            Anxiety's hard to explain<br>
+            Depression's more than just one bad day<br>
+            And men and mental illness have never really understood each anyway so here's the gist:<br>
+            Your enemy is an invisible force you can only really fight through metaphors<br>
+            You're in a sword fight<br>
+            With your own foresight<br>
+            Every victory hidden from public eye<br>
+            Every wound you take yields an invisible cry<br>
+            It's a beast you can't kill but it's one you can fight<br>
+            And maybe with some words you can soften the bite, cause<br>
+            Depression is a lion you've been locked in a cage with, and somebody threw away the key<br>
+            You're in a roman coliseum and there's nowhere to flee<br>
+            The whole world is watching but nobody's helping<br>
+            And you're a fighter, it's true, but now you worry<br>
+            Cause you're a worrier<br>
+            But you're a warrior<br>
+            And you worry<br>
+            But you fight <br>
+            So here's my advice: punch the lion in the mouth<br>
+            Normally you don't condone violence, but for depression you make an exception<br>
+            A quick right hook should teach it a lesson, and if it doesn't?<br>
+            Let it come back for seconds, cause you are champion<br>
+            The fact that you're still standing, still here, still alive, proves that you have the drive and the words to survive<br>
+            With anxiety, life's a racehorse you never wanted to ride<br>
+            And as you hang on for dear life you here something inside say "let go"<br>
+            But you're better than suicide<br>
+            Mind addled, every social encounter an uphill battle<br>
+            Heart beats so fast it's hard to handle<br>
+            Life bucks and tries to throw you off the saddle<br>
+            But you grit your teeth and straddle<br>
+            Hold on tight, not cause it's wrong or right<br>
+            But cause deep down in your scarred heart there's a warrior inside<br>
+            You've been a fighter since birth, and never believed in your own worth<br>
+            You've got a punch that can shake the Earth<br>
+            I won't say you've won but you've survived the day, you've beat back depression in your very own way<br>
+            You've cut a path through the needless pain and sorrow<br>
+            Get some rest; you've earned it. Then do the same thing tomorrow.</div>
+          <im class="content" src="">
+        </div>
+        <h2 id="SceneB">Text B</h2>
+        <h2 id="SceneC">Text C</h2>
+      </div>
+
+
+      <script>
+        // Function to highlight the active link
+        function highlightActiveLink() {
+          const currentPath = window.location.pathname.split("/").pop(); // Current page
+          const currentHash = window.location.hash; // Hash part (e.g., #team)
+      
+          // Iterate over each link in the navigation
+          document.querySelectorAll(".nav-item").forEach(function(link) {
+            const linkHref = link.getAttribute("href").split("/").pop(); // Filename and fragment (if any)
+      
+            // Remove the active class from all links
+            link.classList.remove("active");
+      
+            // Add 'active' class to the link that matches the current path and hash
+            if (linkHref === currentPath + currentHash || linkHref === currentPath) {
+              link.classList.add("active");
+            }
+          });
+        }
+      
+        // Fetch the navigation HTML
+        fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+      
+            // Highlight the active link initially when the page loads
+            highlightActiveLink();
+      
+            // Add an event listener for the 'hashchange' event to update the active link when hash changes
+            window.addEventListener('hashchange', highlightActiveLink);
+          });
+      </script> 
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet">
+    <title>Games</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="nav-placeholder" class="navigation"></div>
+      <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
+      <div class="content" style="float:left">
+        <h1>Games</h1>
+        <table class="custom-table">
+            <tr>
+              <th>Logo</th>
+              <th>Game</th>
+              <th>What I Liked</th>
+            </tr>
+            <tr>
+                <td class="image-cell"><a href="img/de.png" target="_blank"><img src="img/de.png"></a></td>
+                <td><a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/"  target="_blank">Disco Elysium</a></td>
+                <td>dialogue</td>
+            </tr>
+            <tr>
+                <td class="image-cell"><img src="img/hc.ico" style="background-color: rgba(255, 255, 255, 0.352);"></td>
+                <td><a href="https://etherane.itch.io/"  target="_blank">Hello Charlotte</a></td>
+                <td>gore</td>
+            </tr>
+            <tr>
+                <td class="image-cell"><img src="img/fren.png"></td>
+                <td><a href="https://memoriesoffear.jcink.net/index.php?showtopic=56"  target="_blank">Toilet in Wonderland</a></td>
+                <td>little nameless monster</td>
+              </tr>
+              <tr>
+                <td class="image-cell"><img src="img/eh.png"></td>
+                <td><a href="https://store.steampowered.com/app/255320/Edna__Harvey_The_Breakout/" target="_blank">Edna & Harvey: The Breakout</a></td>
+                <td>cute schizo girl</td>
+              </tr>
+          </table>
+
+      <script>
+        function topFunction() {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        function bottomFunction() {
+          window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
+        }
+        </script>
+
+      <script>
+        fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+      
+            // Get the current path without the leading "/"
+            const currentPage = window.location.pathname.split("/").pop();
+      
+            // Iterate over each link in the navigation
+            document.querySelectorAll(".nav-item").forEach(function(link) {
+              // Get the last part of the href (for comparison with current page)
+              const linkHref = link.getAttribute("href").split("/").pop();
+      
+              // If the href matches the current page, add the "active" class
+              if (linkHref === currentPage) {
+                link.classList.add("active");
+              }
+            });
+          });
+      </script>
+    </div>
+    <button onclick="topFunction()" id="btn" title="Go to top"></button>  
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet">
+    <title>The Space</title>
+  </head>
+
+  <body>
+    
+    <div class="container">
+        <div id="nav-placeholder" class="navigation"></div>
+        <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
+        
+        <div class="content" style="text-align: center;">   
+          <h1>Паспорт</h1>
+          
+          <!-- Make the container responsive -->
+          <div class="passport-overlay">
+            <img src="img/fon.png" alt="Passport Background" class="passport-bg">
+            
+            <!-- Text elements with updated positions and both Cyrillic and Latin text stored as data attributes -->
+            <p class="passport-text" style="top: 8%; left: 47%;" data-cyrillic="ГУ МВД РОССИИ" data-latin="GU MVD ROSSI">ГУ МВД РОССИИ</p>
+            <p class="passport-text" style="top: 12%; left: 47%;" data-cyrillic="ПО САМАРСКОЙ ОБЛАСТИ" data-latin="PO SAMARSKOY OBLASTI">ПО САМАРСКОЙ ОБЛАСТИ</p>
+            <p class="passport-text" style="top: 19.5%; left: 26%;" data-cyrillic="15.01.2020" data-latin="15.01.2020">15.01.2020</p>
+            <p class="passport-text" style="top: 19.5%; left: 70%;" data-cyrillic="630-033" data-latin="630-033">630-033</p>
+            <p class="passport-text" style="top: 53%; left: 59%;" data-cyrillic="ЕФРЕМОВА" data-latin="EFREMOVA">ЕФРЕМОВА</p>
+            <p class="passport-text" style="top: 61%; left: 59%;" data-cyrillic="МАРИЯ" data-latin="MARIYA">МАРИЯ</p>
+            <p class="passport-text" style="top: 65%; left: 59%;" data-cyrillic="АЛЕКСАНДРОВНА" data-latin="ALEKSANDROVNA">АЛЕКСАНДРОВНА</p>
+            <p class="passport-text" style="top: 68.5%; left: 40.5%;" data-cyrillic="ЖЕН." data-latin="ZHEN.">ЖЕН.</p>
+            <p class="passport-text" style="top: 68.5%; left: 70%;" data-cyrillic="27.12.2005" data-latin="27.12.2005">27.12.2005</p>
+            <p class="passport-text" style="top: 72.5%; left: 59%;" data-cyrillic="Г. ТОЛЬЯТТИ" data-latin="G. TOLYATTI">Г. ТОЛЬЯТТИ</p>
+            <p class="passport-text" style="top: 76%; left: 59%;" data-cyrillic="САМАРСКАЯ ОБЛ." data-latin="SAMARSKAYA OBL.">САМАРСКАЯ ОБЛ.</p>
+            <p class="passport-text" style="top: 79%; left: 59%;" data-cyrillic="РОССИЯ" data-latin="ROSSIYA">РОССИЯ</p>
+         
+            <img src="img/snufkin.png" class="passport-photo" alt="Profile Photo">
+          </div>
+          <button onclick="translateToLatin()" id="btn">Convert to Latin</button>
+        </div>
+        <button onclick="topFunction()" id="btn" title="Go to top" style="margin-right: 5%;"></button>  
+      </div>
+     
+      <script>
+      // Function to translate text to Latin
+      function translateToLatin() {
+        // Select all elements with the class "passport-text"
+        const elements = document.querySelectorAll('.passport-text');
+        
+        elements.forEach(element => {
+          // Update the text content with the Latin equivalent stored in the data-latin attribute
+          element.textContent = element.getAttribute('data-latin');
+        });
+      }
+      </script>
+
+      
+
+
+    <script>
+      function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+      function bottomFunction() {
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
+      }
+      function openImage(url) {
+      window.open(url, '_blank', 'width=600,height=400,top=' + (screen.height/2 - 200) + ',left=' + (screen.width/2 - 300));
+      }
+    </script>
+
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+    
+          // Get the current path without the leading "/"
+          const currentPage = window.location.pathname.split("/").pop();
+    
+          // Iterate over each link in the navigation
+          document.querySelectorAll(".nav-item").forEach(function(link) {
+            // Get the last part of the href (for comparison with current page)
+            const linkHref = link.getAttribute("href").split("/").pop();
+    
+            // If the href matches the current page, add the "active" class
+            if (linkHref === currentPage) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+    
+    </div>
+  </body>
+</html>

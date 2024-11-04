@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet">
+    <title>Music</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="nav-placeholder" class="navigation"></div>
+      <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
+      <div class="content" style="float:left">
+        
+        <h1>Music</h1>
+        <div class="bookmark-row">
+          <a href="#year-2018" style=" margin: 0 20px;">2018</a> |
+          <a href="#year-2019" style=" margin: 0 20px;">2019</a> |
+          <a href="#year-2020">2020</a> |
+          <a href="#year-2021">2021</a> |
+          <a href="#year-2022">2022</a> |
+          <a href="#year-2023">2023</a>
+        </div>
+        <h3 id="year-2018" style="border-bottom: 1px solid rgb(105, 138, 183);">2018</h3>
+        <ul>
+            <li>Фураж - Моё окружение</li>
+            <li>Он Юн - Небо</li>
+            <li>Illoquence - Eyes</li>
+            <li>Павел Гринёв – Мой мир</li>
+            <li>VERTRUDA - Happiness - when people understand you</li>
+            <li>Зодиак - Зодиак</li>
+            <li>Сатана печёт блины - Дорогая, наш сын Никодин</li>
+        </ul>
+        <h3 id="year-2019" style="border-bottom: 1px solid rgb(105, 138, 183);">2019</h3>
+        <ul>
+            <li>Фураж - Музыка спальных районов</li>
+            <li>Eve - 僕らまだアンダーグラウンド</li>
+            <li>Кино - Перемен</li>
+            <li>Сны о личном - Новая война</li>
+            <li>Lil Peep - Gym Class</li>
+            <li>Mariya Takeuchi - Plastic Love 竹内 まりや</li>
+            <li>Гражданская оборона - Некрофилия</li>
+        </ul>
+        <h3 id="year-2020" style="border-bottom: 1px solid rgb(105, 138, 183);">2020</h3>
+        <ul>
+            <li>
+                End of Evangelion -
+                Come Sweet Death</li>
+            <li>Satie - Gymnopédie No. 1</li>
+            <li>
+                Дурной Вкус -
+                Пластинки</li>
+            <li>bôa - Duvet</li>
+            <li>
+                American Football -
+                Never Meant</li>
+            <li>
+                Marty Robbins -
+                Big Iron</li>
+            <li>
+                Princesse Angine -
+                Фантастический вальс</li>
+        </ul>   
+        <h3 id="year-2021" style="border-bottom: 1px solid rgb(105, 138, 183);">2021</h3>
+        <ul>
+            <li>
+                The Irish Rovers -
+                Drunken Sailor</li>
+            <li>
+                Валаамский хор -
+                Черный ворон</li>
+            <li>
+                Beach House -
+                Space Song</li>
+            <li>
+                Burzum -
+                War</li>
+            <li>
+                nouns - ski mask</li>
+            <li>
+                Daddy and The Long Legs - Smoke Breaks</li>
+            <li>
+            The Flat Stanleys - Me vs Your Friends</li>
+        </ul>
+        <h3 id="year-2022" style="border-bottom: 1px solid rgb(105, 138, 183);">2022</h3>
+        <ul>
+            <li>Soft Cough - Sea Dogs and Pyrite</li>
+            <li>nouns - I feel as though I've failed</li>
+            <li>Orchid - I am Nietzche</li>
+            <li>Coma Cinema - Caroline, Please Kill Me</li>
+            <li>The Smiths - How Soon Is Now?</li>
+            <li>Lich King - Combat Mosh</li>
+            <li>Negative XP - Life is An RPG and I Fucked Up My Build</li>
+        </ul>
+        <h3 id="year-2023" style="border-bottom: 1px solid rgb(105, 138, 183);">2023</h3>
+        ???
+      </div>
+      <button onclick="topFunction()" id="btn" title="Go to top"></button>
+
+      <script>
+        function topFunction() {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        function bottomFunction() {
+          window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
+        }
+      </script>
+
+      <script>
+        fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+      
+            // Get the current path without the leading "/"
+            const currentPage = window.location.pathname.split("/").pop();
+      
+            // Iterate over each link in the navigation
+            document.querySelectorAll(".nav-item").forEach(function(link) {
+              // Get the last part of the href (for comparison with current page)
+              const linkHref = link.getAttribute("href").split("/").pop();
+      
+              // If the href matches the current page, add the "active" class
+              if (linkHref === currentPage) {
+                link.classList.add("active");
+              }
+            });
+          });
+      </script>
+    </div>
+  </body>
+</html>
