@@ -101,7 +101,6 @@ h1 {
 }
 
 #btn {
-  display: 2; /* Hidden by default */
   position: sticky; /* Fixed/sticky position */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
