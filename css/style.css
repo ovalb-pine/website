@@ -173,6 +173,7 @@ ol li::before {
   height: 15px; /* Icon height */
   margin-right: 10px; /* Space between icon and text */
 }
+
 a {
   color: white; /* Set your desired default link color */
 }

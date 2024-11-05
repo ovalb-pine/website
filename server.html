@@ -19,16 +19,16 @@
         <p>Фамилия: <input type="Text" name="last_name" class="button field" value="Ефремова"></p>
         <p>Имя: <input type="Text" name="first_name" class="button field" value="Мария"></p>
         <p>Группа: <input type="Number" name="group" class="button field" value="5"></p>
-        <p>Мобильный телефон: <input type="Number" class="button field"></p>
+        <p>Мобильный телефон: <input type="Number" name="phone_number" class="button field"></p>
         <p>E-mail:<input type="Text" name="email" class="button field" value="maalefremova@edu.hse.ru"></p>
         <p>Дата: <input type="date" name="user_date" class="button field" value="2024-11-06"></p>
         <p align="right">
-          <input type="Reset" name="Reset" class="button" value="Обновить">
-          <input type="Submit" name="submit"class="button" value="Отправить">
+          <input type="Reset" name="reset" class="button" value="Обновить">
+          <input type="Submit" name="submit" class="button" value="Отправить">
         </p>
       </form>
         <h3>Оставить воспоминание</h3>
-        <form action="https://www.bing.com/search?" id="UserEnter2" name="UserEnter2" target="_blank">
+        <form action="https://www.bing.com/search?" id="memory_form" name="memory_form" target="_blank">
         <input type="hidden" name="q" value="search">
           <p>Место проишествия:
             <input type="Radio" name="place" value="real" checked="">Реальность
@@ -43,27 +43,27 @@
         </p>
     
         <p>Настроение воспоминания:
-            <select name="languages" class="button field" style="cursor: pointer;">
+            <select name="mood" class="button field" style="cursor: pointer;">
                 <option value="loving">Любящее</option>
                 <option value="hateful">Ненавистное</option>
-                <option value="confused">Растеряное</option>
+                <option value="confused">Растерянное</option>
                 <option value="calming">Успокаивающее</option>
             </select>
         </p>
         <p>Оценка воспоминания: <input type="number" name="rating" value="5" class="button field"></p>
         <p> Описание воспоминания:
             <br>
-            <textarea cols="60" rows="4" name="textarea" class="button field">Детали</textarea>
+            <textarea cols="60" rows="4" name="description" class="button field">Детали</textarea>
         </p>
     
-        <p>Секретное слово: <input type="Password" name="password" size="9" class="button field" value="понимание"></p>
-        <p>Дата произошедшего: <input type="date" name="user_date" class="button field" value="2005-12-27"></p>
+        <p>Секретное слово: <input type="Password" name="secret" size="9" class="button field" value="понимание"></p>
+        <p>Дата произошедшего: <input type="date" name="memory_date" class="button field" value="2005-12-27"></p>
 
         <input type="hidden" name="form_version" value="v1.0">
 
         <p align="right">
-          <input type="Reset" name="Reset" class="button" value="Обновить">
-          <input type="Submit" name="submit"class="button" value="Отправить">
+          <input type="Reset" name="reset" class="button" value="Обновить">
+          <input type="Submit" name="submit" class="button" value="Отправить">
         </p>
     </form>
     </div>
