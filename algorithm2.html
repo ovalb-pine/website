@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/style.css" rel="stylesheet">
-    <title>Решение алгоритмической задачи</title>
+    <title>Форма для алг. задачи</title>
   </head>
 
   <body>
@@ -20,7 +20,7 @@
                 <ol>
                     <li>Для поисковика:<input name="q" value="search" class="button field"></li>
                     <li>Формулировка задачи 
-                        <br><textarea cols="45" rows="2" id="task" name="formulation" class="button field">Z = XY при X > Y, Z = ln(X + Y) в противном случае. Вычислить Z.</textarea></li>
+                        <br><textarea cols="45" rows="3" id="task" name="formulation" class="button field">Даны вещественные числа X и Y. Вычислить Z. Z = XY при X > Y, Z = ln(X + Y) в противном случае.</textarea></li>
                     <li>X: <input id="x" name="x" type="number" class="button field" value="32"></li>
                     <li>Y: <input id="y" name="y" type="number" class="button field" value="2"></li>
                     <li>Результат решения задачи: <input id="result" name="result" class="button field"></li>
@@ -33,37 +33,8 @@
         <button onclick="topFunction()" id="btn" title="Go to top"></button> 
     </div>
 
-    <script>
-        function topFunction() {
-          window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-        function bottomFunction() {
-          window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
-        }
-      </script>
-  
-
-    <script>
-        fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
-      
-            // Get the current path without the leading "/"
-            const currentPage = window.location.pathname.split("/").pop();
-      
-            // Iterate over each link in the navigation
-            document.querySelectorAll(".nav-item").forEach(function(link) {
-              // Get the last part of the href (for comparison with current page)
-              const linkHref = link.getAttribute("href").split("/").pop();
-      
-              // If the href matches the current page, add the "active" class
-              if (linkHref === currentPage) {
-                link.classList.add("active");
-              }
-            });
-          });
-      </script>
+    <script src="buttons.js"></script>
+    <script src="navigation.js"></script>    
   </body>
 
 </html>

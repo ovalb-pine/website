@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/style.css" rel="stylesheet">
-    <title>Games</title>
+    <title>DOM_JS. Считываем информацию из DOM</title>
   </head>
 
   <body>
@@ -15,37 +15,11 @@
         <h1>DOM_JS. Считываем информацию из DOM</h1>
         <a href="img/screenshot.png" target="_blank"><img src="img/screenshot.png"></a>
 
-      <script>
-        function topFunction() {
-          window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-        function bottomFunction() {
-          window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
-        }
-        </script>
-
-      <script>
-        fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
-      
-            // Get the current path without the leading "/"
-            const currentPage = window.location.pathname.split("/").pop();
-      
-            // Iterate over each link in the navigation
-            document.querySelectorAll(".nav-item").forEach(function(link) {
-              // Get the last part of the href (for comparison with current page)
-              const linkHref = link.getAttribute("href").split("/").pop();
-      
-              // If the href matches the current page, add the "active" class
-              if (linkHref === currentPage) {
-                link.classList.add("active");
-              }
-            });
-          });
-      </script>
+      <script src="buttons.js"></script>
+      <script src="navigation.js"></script>
+      </div>
+      <button onclick="topFunction()" id="btn" title="Go to top"></button>  
     </div>
-    <button onclick="topFunction()" id="btn" title="Go to top"></button>  
+
   </body>
 </html>

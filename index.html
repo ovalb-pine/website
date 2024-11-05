@@ -10,7 +10,6 @@
   <body>
     
     <div class="container">
-      
       <div id="nav-placeholder" class="navigation"></div>
       <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
       <div class="content">
@@ -18,8 +17,6 @@
         <center><i style="border-bottom: 1px solid rgb(105, 138, 183);"> HOME IS WHERE YOU ARE</i></center>
         <p>Welcome to my personal website. Here, you may click through 
           the gallery of my memories. Just use the navigation bar on the left.</p>
-        <!-- <p>1013. Даны вещественные числа X и Y . Вычислить Z. Z = XY при 
-          X > Y ,Z = ln(X + Y ) в противном случае.</p> -->
         <img src="img/forest.jpg">
         <h3>Photo of The Day</h3>
         <table class="custom-table">
@@ -41,41 +38,15 @@
       <button onclick="topFunction()" id="btn" title="Go to top"></button>
     </div>
 
+    <script src="buttons.js"></script>
 
     <script>
-      function topFunction() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      }
-      function bottomFunction() {
-        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
-      }
       function openImage(url) {
       window.open(url, '_blank', 'width=600,height=400,top=' + (screen.height/2 - 200) + ',left=' + (screen.width/2 - 300));
       }
     </script>
 
-    <script>
-      fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('nav-placeholder').innerHTML = data;
-    
-          // Get the current path without the leading "/"
-          const currentPage = window.location.pathname.split("/").pop();
-    
-          // Iterate over each link in the navigation
-          document.querySelectorAll(".nav-item").forEach(function(link) {
-            // Get the last part of the href (for comparison with current page)
-            const linkHref = link.getAttribute("href").split("/").pop();
-    
-            // If the href matches the current page, add the "active" class
-            if (linkHref === currentPage) {
-              link.classList.add("active");
-            }
-          });
-        });
-    </script>
-    
-    </div>
+    <script src="navigation.js"></script>
+
   </body>
 </html>

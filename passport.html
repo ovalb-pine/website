@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/style.css" rel="stylesheet">
-    <title>The Space</title>
+    <title>Изменяем кириллицу на латиницу по клику</title>
   </head>
 
   <body>
@@ -53,43 +53,8 @@
         });
       }
       </script>
-
-      
-
-
-    <script>
-      function topFunction() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      }
-      function bottomFunction() {
-        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
-      }
-      function openImage(url) {
-      window.open(url, '_blank', 'width=600,height=400,top=' + (screen.height/2 - 200) + ',left=' + (screen.width/2 - 300));
-      }
-    </script>
-
-    <script>
-      fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('nav-placeholder').innerHTML = data;
-    
-          // Get the current path without the leading "/"
-          const currentPage = window.location.pathname.split("/").pop();
-    
-          // Iterate over each link in the navigation
-          document.querySelectorAll(".nav-item").forEach(function(link) {
-            // Get the last part of the href (for comparison with current page)
-            const linkHref = link.getAttribute("href").split("/").pop();
-    
-            // If the href matches the current page, add the "active" class
-            if (linkHref === currentPage) {
-              link.classList.add("active");
-            }
-          });
-        });
-    </script>
+      <script src="buttons.js"></script>
+      <script src="navigation.js"></script>    
     
     </div>
   </body>
