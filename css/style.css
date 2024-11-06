@@ -147,7 +147,6 @@ h1 {
 
 
 ul {
-  list-style-type: none;
   padding: 0;
 }
 ul li{
@@ -160,7 +159,7 @@ ol {
 }
 ol li {
   display: flex;
-  align-items: center; /* Ensures vertical centering */
+  align-items: center;
   margin: 5px 0;
 }
 
@@ -168,10 +167,10 @@ ol li::before {
   content: "";
   display: inline-block;
   background-image: url("../img/star.png");
-  background-size: contain; /* Ensures the image scales correctly */
-  width: 15px; /* Icon width */
-  height: 15px; /* Icon height */
-  margin-right: 10px; /* Space between icon and text */
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
 }
 
 a {
