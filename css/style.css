@@ -238,18 +238,6 @@ justify-content: center;
   z-index: 1; /* Поверхность для текста */
 }
 
-.custom-table::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.845); /* Полупрозрачный черный слой */
-  z-index: -1; /* Помещает слой за содержимым таблицы */
-}
-
-
 .custom-table td, .custom-table th {
   border: 1px solid #ccc;
   padding: 15px;
