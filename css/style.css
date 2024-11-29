@@ -1,6 +1,6 @@
 body {
   font-family: "Alegreya", serif;
-  font-size: 20px;
+  font-size: 120%;
   background-color: black;
   color: white;
 }
@@ -31,6 +31,11 @@ h1 {
 .content {
   width: 65%;
 }
+
+.content2 {
+  width: 100%;
+}
+
 .passport-overlay {
   position: relative;
   display: inline-block;
@@ -170,7 +175,7 @@ ul li:before {
 }
 ol {
   list-style-type: none;
-  padding-left: 1em;
+  padding-left: 0em;
 }
 ol li {
   display: flex;
@@ -242,11 +247,89 @@ justify-content: center;
   border: 1px solid #ccc;
   padding: 15px;
   text-align: center;
+  width: 100%;
 }
 
 
 .image-cell img {
-  width: 100px;
+  width: 100%;
   height: auto;
   border-radius: 5px;
+}
+
+/* Media Query for small screens (phones) */
+@media (max-width: 600px) {
+
+  .container {
+    flex-direction: row; /* Stack navigation and content */
+    padding: 10px;
+  }
+
+  .navigation {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  ul {
+
+    display: flex; /* Use Flexbox for inline layout */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: center; /* Center items (optional) */
+    gap: 80%; /* Add spacing between items (optional) */
+  }
+
+  ul li {
+    margin-bottom: 0; /* Remove bottom margin for inline layout */
+  }
+
+  .content {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .passport-overlay {
+    max-width: 100%; /* Scale container to fit screen */
+  }
+
+  .button {
+    font-size: 14px; /* Adjust button size */
+    margin: 5px 0; /* Reduce margins */
+  }
+
+  .bookmark-row {
+    flex-wrap: wrap; /* Allow links to wrap */
+    text-align: center;
+  }
+
+  ol li {
+    margin-left: 0%; /* Increase spacing for better readability */
+  }
+
+}
+
+/* Media Query for tablets */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack navigation and content */
+  }
+
+  .navigation, .content {
+    width: 100%; /* Full width for both sections */
+  }
+}
+
+/* Adjustments for all screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.custom-table {
+  font-size: 16px; /* Slightly smaller font for tables */
+}
+
+.custom-table td, .custom-table th {
+  padding: 10px; /* Reduce padding for smaller screens */
+}
+
+.image-cell img {
+  width: 75px; /* Reduce image size for smaller screens */
 }

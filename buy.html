@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet">
+    <title>Shop</title>
+</head>
+
+<body>
+<div class="container">
+    <div id="nav-placeholder" class="navigation"></div>
+    <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
+       <!--начало уникального содержания страницы-->
+        <div class="card-body">
+            <h1 class='card-title text-center'>Shop</h5>
+            <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+                <input name="q" type="hidden" value="search">
+                <ul class="container" id="node_for_insert">
+                <!--начало генерируемого фрагмента кода -->
+                </ul>
+                <input class="button" type="Submit" value="To cart">
+            </form>
+        </div>
+        <!--окончание уникального содержания страницы-->
+    <button onclick="topFunction()" id="btn" title="Go to top"></button>
+</div>
+<script src="buy.js"></script>
+<script src="buttons.js"></script>
+<script src="navigation.js"></script>  
+</body>
+</html>
