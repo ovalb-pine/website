@@ -3,6 +3,8 @@ body {
   font-size: 125%;
   background-color: black;
   color: white;
+
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 p {
@@ -35,6 +37,8 @@ h1 {
   gap: 0%; /* Add space between navigation items */
   width: 100%; /* Ensure navigation spans the full width */
   padding: 0px 0;
+  max-width: 100%; /* Prevent container from exceeding screen width */
+  overflow-x: hidden; /* Hide content that might overflow horizontally */
 }
 
 .navigation ul {
@@ -55,8 +59,7 @@ ul li {
   padding: 5px; /* Optional: Add padding to each item */
 }
 .navigation ul img {
-  height: 230px;
-  min-width: 40px; /* Ensure images don't shrink */
+  min-width: 30px; /* Ensure images don't shrink */
   vertical-align: text-bottom;
 }
 
