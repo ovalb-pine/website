@@ -1,6 +1,6 @@
 body {
   font-family: "Alegreya", serif;
-  font-size: 120%;
+  font-size: 125%;
   background-color: black;
   color: white;
 }
@@ -8,9 +8,10 @@ body {
 p {
   text-indent: 5%;
 }
+
 h1 {
   text-align: center;
-  color:rgb(105, 138, 183)
+  color: rgb(105, 138, 183);
 }
 
 .container {
@@ -20,16 +21,48 @@ h1 {
   margin: auto;
 }
 
-.passport-overlay {
-  position: relative;
-  display: inline-block;
+.container {
+  flex-direction: column; /* Stack navigation and content vertically */
+  padding: 0px;
+  width: 100%;
 }
 
 .navigation {
-  width: 25%
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center; /* Center-align all items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 0%; /* Add space between navigation items */
+  width: 100%; /* Ensure navigation spans the full width */
+  padding: 0px 0;
 }
+
+.navigation ul {
+  display: flex; /* Ensure ul behaves as a flex container */
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center; /* Center ul within its parent */
+  list-style: none; /* Remove bullet points */
+  gap: 0%; /* Add space between items */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  width: 5%;
+}
+ul li {
+  margin-left: 5%;
+}
+.navigation ul li {
+  display: inline; /* Ensure list items are inline for horizontal alignment */
+  padding: 5px; /* Optional: Add padding to each item */
+}
+.navigation ul img {
+  height: 230px;
+  min-width: 40px; /* Ensure images don't shrink */
+  vertical-align: text-bottom;
+}
+
 .content {
   width: 65%;
+  align-self: center;
 }
 
 .content2 {
@@ -43,22 +76,12 @@ h1 {
   width: 100%; /* Allow it to scale with window */
 }
 
-/* Make the overlay container responsive */
-.passport-overlay {
-  position: relative;
-  display: inline-block;
-  max-width: 500px; /* Set a maximum width for responsiveness */
-  width: 100%; /* Allow it to scale with the window */
-}
-
-/* Ensure the image is responsive */
 .passport-bg {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Responsive text styling */
 .passport-text {
   position: absolute;
   font-size: 1em;
@@ -67,67 +90,59 @@ h1 {
   width: 100%;
 }
 
-/* Profile photo positioning */
 .passport-photo {
   position: absolute;
   width: 28%;
   height: 24%;
-  top: 73%; /* Adjust based on image layout */
-  left: 19%; /* Adjust as needed */
+  top: 73%;
+  left: 19%;
   transform: translate(-50%, -50%);
 }
 
-.button{
-  position: sticky; /* Fixed/sticky position */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: 0.1rem solid;
-  outline-color: rgb(105, 138, 183); /* Remove outline */
-  background-color: rgb(0, 0, 0); /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 10px; /* Some padding */
-  border-radius: 7px; /* Rounded corners */
-  font-size: 16px; /* Increase font size */
+.button {
+  position: sticky;
+  z-index: 99;
+  border: none;
+  outline: 0.1rem solid rgb(105, 138, 183);
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 16px;
   margin-left: 5%;
 }
 
-.span.text{
-  margin-left: 5%;
+.button:hover {
+  background-color: #555;
 }
 
-.button.field:hover{
-  background-color: rgb(0, 0, 0); /* Set a background color */
+.button.field:hover {
+  background-color: black;
   cursor: text;
 }
 
-.button:hover{
-  background-color: #555; /* Add a dark-grey background on hover */
-}
-
 #btn {
-  position: sticky; /* Fixed/sticky position */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: 0.1rem solid;
-  outline-color: rgb(105, 138, 183); /* Remove outline */
-  background-color: rgb(0, 0, 0); /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 10px; /* Some padding */
-  border-radius: 7px; /* Rounded corners */
-  font-size: 16px; /* Increase font size */
+  position: sticky;
+  z-index: 99;
+  border: none;
+  outline: 0.1rem solid rgb(105, 138, 183);
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 16px;
 }
 
 #btn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #555;
 }
 
 .nav-item.active {
   font-weight: bold;
   color: rgb(105, 138, 183);
 }
-
 
 .nav-item.small {
   font-style: italic;
@@ -142,41 +157,35 @@ h1 {
 .column {
   flex: 1;
   padding: 10px;
-  
 }
-
 
 .column img {
   margin-top: 5px;
 }
 
-
 ul {
   list-style-type: none;
   padding: 0;
 }
-ul li{
+
+ul li {
   margin-bottom: 3%;
 }
 
-ul li:before {
-  /* For a round bullet */
+/* ul li:before {
   content: '\2022';
-  /* For a square bullet */
-  /*content:'\25A0';*/
   display: block;
-  position: relative;
-  max-width: 0;
-  max-height: 0;
+
   left: -11px;
-  top: 0;
   color: rgb(105, 138, 183);
   font-size: 20px;
-}
+} */
+
 ol {
   list-style-type: none;
-  padding-left: 0em;
+  padding-left: 0;
 }
+
 ol li {
   display: flex;
   align-items: center;
@@ -194,11 +203,11 @@ ol li::before {
 }
 
 a {
-  color: white; /* Set your desired default link color */
+  color: white;
 }
 
 a:visited {
-  color: white; /* Ensure visited links remain the same color */
+  color: white;
 }
 
 a:hover {
@@ -210,46 +219,43 @@ a:active {
 }
 
 img {
-  max-width: 100%;      /* Image will scale with the container */
+  max-width: 100%;
   height: auto;
 }
 
 nav {
   position: sticky;
-  top: 0; /* This ensures it sticks to the top of the viewport */
-  z-index: 1000; /* Keeps the nav on top of other elements */
-  background-color: #000000; /* Set a background so it doesn't overlap content */
-  border-bottom: 1px solid rgb(105, 138, 183); /* Optional: adds a bottom border */
-  padding: 10px; /* Optional: padding for space inside the nav */
+  top: 0;
+  z-index: 1000;
+  background-color: black;
+  border-bottom: 1px solid rgb(105, 138, 183);
+  padding: 10px;
 }
 
 .bookmark-row {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .bookmark-row a {
-  margin: 0 10px; 
+  margin: 0 10px;
 }
 
 .custom-table {
   width: 100%;
   margin: auto;
   border-collapse: collapse;
-  position: relative; /* Установите относительное позиционирование для таблицы */
   background-image: url("../img/weezer.png");
   background-size: cover;
   background-position: center;
-  z-index: 1; /* Поверхность для текста */
+  margin-bottom: 5%;
 }
 
 .custom-table td, .custom-table th {
   border: 1px solid #ccc;
   padding: 15px;
   text-align: center;
-  width: 100%;
 }
-
 
 .image-cell img {
   width: 100%;
@@ -257,30 +263,46 @@ justify-content: center;
   border-radius: 5px;
 }
 
-/* Media Query for small screens (phones) */
 @media (max-width: 600px) {
-
   .container {
-    flex-direction: row; /* Stack navigation and content */
-    padding: 10px;
+    flex-direction: column; /* Stack navigation and content vertically */
+    padding: 0px;
+    width: 100%;
   }
 
   .navigation {
-    width: 100%; /* Full width on smaller screens */
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: row; /* Align items horizontally */
+    justify-content: center; /* Center-align all items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 0%; /* Add space between navigation items */
+    width: 100%; /* Ensure navigation spans the full width */
+    padding: 0px 0;
   }
 
-  ul {
-
-    display: flex; /* Use Flexbox for inline layout */
-    flex-wrap: wrap; /* Allow wrapping to the next line */
-    justify-content: center; /* Center items (optional) */
-    gap: 80%; /* Add spacing between items (optional) */
+  .navigation ul {
+    display: flex; /* Ensure ul behaves as a flex container */
+    flex-direction: row; /* Align items horizontally */
+    justify-content: center; /* Center ul within its parent */
+    list-style: none; /* Remove bullet points */
+    gap: 0%; /* Add space between items */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    width: 5%;
   }
-
   ul li {
-    margin-bottom: 0; /* Remove bottom margin for inline layout */
+    margin-left: 5%;
   }
-
+  .navigation ul li {
+    display: inline; /* Ensure list items are inline for horizontal alignment */
+    padding: 5px; /* Optional: Add padding to each item */
+  }
+  .navigation img {
+    size: 5%;
+    display: flex; /* Ensure ul behaves as a flex container */
+    flex-direction: row; /* Align items horizontally */
+    justify-content: center; /* Center ul within its parent */
+  }
   .content {
     width: 100%; /* Full width on smaller screens */
   }
@@ -291,7 +313,7 @@ justify-content: center;
 
   .button {
     font-size: 14px; /* Adjust button size */
-    margin: 5px 0; /* Reduce margins */
+    margin: 5px 0;
   }
 
   .bookmark-row {
@@ -300,36 +322,38 @@ justify-content: center;
   }
 
   ol li {
-    margin-left: 0%; /* Increase spacing for better readability */
+    margin-left: 0; /* Adjust spacing */
   }
-
 }
 
-/* Media Query for tablets */
+
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack navigation and content */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .navigation {
+    width: 100%;
+    flex-direction: row;
+    display: flex; /* Arrange items horizontally */
+    justify-content: space-around; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 10px 0; /* Add some padding for better spacing */
+    background-color: #000; /* Match overall design */
+    border-bottom: 0px; /* Optional: border for separation */
+  }
+  .navigation ul {
+    flex-direction: row; /* Arrange items vertically */
+    gap: 80%; /* Add spacing between items */
+  }
+
+  ul {
+    width: 100%;
   }
 
   .navigation, .content {
-    width: 100%; /* Full width for both sections */
+    width: 100%;
   }
-}
-
-/* Adjustments for all screens */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.custom-table {
-  font-size: 16px; /* Slightly smaller font for tables */
-}
-
-.custom-table td, .custom-table th {
-  padding: 10px; /* Reduce padding for smaller screens */
-}
-
-.image-cell img {
-  width: 75px; /* Reduce image size for smaller screens */
 }
