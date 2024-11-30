@@ -252,6 +252,7 @@ nav {
   background-size: cover;
   background-position: center;
   margin-bottom: 5%;
+  flex-wrap: wrap;
 }
 
 .custom-table td, .custom-table th {
@@ -274,89 +275,25 @@ nav {
   }
 
   .navigation {
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: row; /* Align items horizontally */
-    justify-content: center; /* Center-align all items horizontally */
-    align-items: center; /* Center items vertically */
-    gap: 0%; /* Add space between navigation items */
-    width: 100%; /* Ensure navigation spans the full width */
-    padding: 0px 0;
+    width: 100%;
+    flex-direction: column; /* Stack navigation vertically */
+    align-items: center; /* Center items */
   }
 
   .navigation ul {
-    display: flex; /* Ensure ul behaves as a flex container */
-    flex-direction: row; /* Align items horizontally */
-    justify-content: center; /* Center ul within its parent */
-    list-style: none; /* Remove bullet points */
-    gap: 0%; /* Add space between items */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    width: 5%;
+    flex-direction: column; /* Stack list items vertically */
   }
-  ul li {
-    margin-left: 5%;
-  }
+
   .navigation ul li {
-    display: inline; /* Ensure list items are inline for horizontal alignment */
-    padding: 5px; /* Optional: Add padding to each item */
+    margin: 10px 0; /* Adjust spacing for vertical layout */
   }
-  .navigation img {
-    size: 5%;
-    display: flex; /* Ensure ul behaves as a flex container */
-    flex-direction: row; /* Align items horizontally */
-    justify-content: center; /* Center ul within its parent */
-  }
-  .content {
-    width: 100%; /* Full width on smaller screens */
+  
+  .custom-table td, .custom-table th {
+    padding: 8px; /* Reduce padding for smaller screens */
+    font-size: 14px; /* Adjust font size */
   }
 
-  .passport-overlay {
-    max-width: 100%; /* Scale container to fit screen */
+  .image-cell img {
+    max-width: 80%; /* Further reduce image size if necessary */
+  
   }
-
-  .button {
-    font-size: 14px; /* Adjust button size */
-    margin: 5px 0;
-  }
-
-  .bookmark-row {
-    flex-wrap: wrap; /* Allow links to wrap */
-    text-align: center;
-  }
-
-  ol li {
-    margin-left: 0; /* Adjust spacing */
-  }
-}
-
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  .navigation {
-    width: 100%;
-    flex-direction: row;
-    display: flex; /* Arrange items horizontally */
-    justify-content: space-around; /* Space items evenly */
-    align-items: center; /* Center items vertically */
-    padding: 10px 0; /* Add some padding for better spacing */
-    background-color: #000; /* Match overall design */
-    border-bottom: 0px; /* Optional: border for separation */
-  }
-  .navigation ul {
-    flex-direction: row; /* Arrange items vertically */
-    gap: 80%; /* Add spacing between items */
-  }
-
-  ul {
-    width: 100%;
-  }
-
-  .navigation, .content {
-    width: 100%;
-  }
-}
