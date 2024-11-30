@@ -11,6 +11,7 @@
   <body>
     
     <div class="container">
+      <span class="hamburger">☰</span>
       <div id="nav-placeholder" class="navigation"></div>
       <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
       <div class="content">
@@ -20,7 +21,7 @@
           the gallery of my memories. Just use the navigation bar on the left.</p>
         <img src="img/forest.jpg">
         <div align="center"><i>A winter night</i></div>
-        <h3>Photo of The Day</h3>
+        <!-- <h3>Photo of The Day</h3>
         <table class="custom-table">
           <tr>
             <th>Photo</th>
@@ -34,11 +35,15 @@
             <td>04.04.2023</td>
             <td>Road covered in snow</td>
           </tr>
-        </table>
+        </table> -->
       </div>
       <button onclick="topFunction()" id="btn" title="Go to top"></button>
     </div>
-
+    <script>document.querySelector('.hamburger').addEventListener('click', function () {
+      const navMenu = document.querySelector('nav ul');
+      navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+    </script>
     <script src="buttons.js"></script>
     <script src="navigation.js"></script>
 

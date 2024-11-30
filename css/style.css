@@ -30,26 +30,16 @@ h1 {
 }
 
 .navigation {
-  display: flex; /* Use Flexbox for layout */
-  flex-direction: row; /* Align items horizontally */
-  justify-content: center; /* Center-align all items horizontally */
-  align-items: center; /* Center items vertically */
-  gap: 0%; /* Add space between navigation items */
-  width: 100%; /* Ensure navigation spans the full width */
-  padding: 0px 0;
-  max-width: 100%; /* Prevent container from exceeding screen width */
-  overflow-x: hidden; /* Hide content that might overflow horizontally */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navigation ul {
-  display: flex; /* Ensure ul behaves as a flex container */
-  flex-direction: row; /* Align items horizontally */
-  justify-content: center; /* Center ul within its parent */
-  list-style: none; /* Remove bullet points */
-  gap: 0%; /* Add space between items */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  width: 5%;
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 ul li {
   margin-left: 5%;
@@ -226,15 +216,6 @@ img {
   height: auto;
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: black;
-  border-bottom: 1px solid rgb(105, 138, 183);
-  padding: 10px;
-}
-
 .bookmark-row {
   display: flex;
   justify-content: center;
@@ -255,6 +236,13 @@ nav {
   flex-wrap: wrap;
 }
 
+.hamburger {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  font-size: 24px;
+  color: rgb(105, 138, 183);
+}
+
 .custom-table td, .custom-table th {
   border: 1px solid #ccc;
   padding: 15px;
@@ -273,6 +261,25 @@ nav {
     padding: 0px;
     width: 100%;
   }
+  .hamburger {
+    display: block; /* Show the hamburger on mobile */
+  }
+  .content {
+    width: 95%;
+  }
+  .navigation ul {
+    display: none; /* Hide the menu by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    background-color: #000;
+  }
+
+  .navigation ul li:before{
+    content: '\2022';
+    left: -15%;
+    color: rgb(105, 138, 183);
+    font-size: 20px;
+  }
+
 
   .navigation {
     width: 100%;
