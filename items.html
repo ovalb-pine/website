@@ -10,6 +10,7 @@
 
 <body>
 <div class="container">
+    <span class="hamburger">☰</span>
     <div id="nav-placeholder" class="navigation"></div>
     <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
        <!--начало уникального содержания страницы-->
@@ -20,12 +21,17 @@
                 <ul class="container" id="node_for_insert">
                 <!--начало генерируемого фрагмента кода -->
                 </ul>
-                <input class="button" type="Submit" value="To cart">
+                <input class="button" style="margin-bottom: 5%" type="Submit" value="To cart">
             </form>
         </div>
         <!--окончание уникального содержания страницы-->
     <button onclick="topFunction()" id="btn" title="Go to top"></button>
 </div>
+<script>document.querySelector('.hamburger').addEventListener('click', function () {
+    const navMenu = document.querySelector('nav ul');
+    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
 <script src="buy.js"></script>
 <script src="buttons.js"></script>
 <script src="navigation.js"></script>  

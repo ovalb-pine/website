@@ -1,92 +1,92 @@
 [
     {
       "id": "1",
-      "title": "Товар 1",
+      "title": "World's Largest Tree Crusher",
       "vendor_code": "111",
-      "description": "Описание 1",
-      "price": 100,
-      "img": "../../images/uso_001.jpg"
+      "description": "It is very large",
+      "price": 10,
+      "img": "img/crusher.jpg"
     },
     {
       "id": "2",
-      "title": "Товар 2",
+      "title": "Syrok",
       "vendor_code": "222",
-      "description": "Описание 2",
+      "description": "The blessed food",
       "price": 200,
-      "img": "../../images/uso_002.jpg"
+      "img": "img/yummy.jpg"
     },
     {
       "id": "3",
-      "title": "Товар 3",
+      "title": "The Arecibo Observatory",
       "vendor_code": "333",
-      "description": "Описание 3",
-      "price": 300,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_003.jpg"
+      "description": "Working condition not guaranteed",
+      "price": 3000000,
+      "img": "img/arecibo.jpg"
     },
     {
       "id": "4",
-      "title": "Товар 4",
+      "title": "The Evil Bird",
       "vendor_code": "444e",
-      "description": "Описание 4",
-      "price": 400,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_004.jpg"
+      "description": "Beware, for he knows",
+      "price": 666,
+      "img": "img/evilbird.jpg"
     }
     ,
     {
       "id": "5",
-      "title": "Товар 5",
+      "title": "Asthmatic Cat",
       "vendor_code": "4445e",
-      "description": "Описание 6",
-      "price": 400,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_005.jpg"
+      "description": "Useless",
+      "price": 0,
+      "img": "img/asthma.jpg"
     },
     {
       "id": "6",
-      "title": "Товар 6",
+      "title": "Your Father",
       "vendor_code": "4446e",
-      "description": "Описание 6",
-      "price": 400,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/1_1.png"
+      "description": "He gives you money. You wonder if that means he's finally sorry",
+      "price": -100,
+      "img": "img/father.jpg"
     },
     {
       "id": "7",
-      "title": "Товар 7",
+      "title": "The Fluffy Eye",
       "vendor_code": "4447e",
-      "description": "Описание 7",
+      "description": "May randomply reproduce by mitosis",
       "price": 700,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/1_2.png"
+      "img": "img/fluffy_eye.png"
     },
     {
       "id": "8",
-      "title": "Товар 8",
+      "title": "Wise Tree",
       "vendor_code": "4448e",
-      "description": "Описание 8",
+      "description": "Will judge you",
       "price": 800,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/1_3.png"
+      "img": "img/tree.jpg"
     },
     {
       "id": "9",
-      "title": "Товар 9",
+      "title": "Dill",
       "vendor_code": "444e",
-      "description": "Описание 9",
-      "price": 400,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/1_4.png"
+      "description": "Dill",
+      "price": 20,
+      "img": "img/dill.jpg"
     }
     ,
     {
       "id": "10",
-      "title": "Товар 10",
+      "title": "The mouse of love",
       "vendor_code": "44410e",
-      "description": "Описание 10",
+      "description": "It stores the memories of love",
       "price": 900,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/1_5.png"
+      "img": "img/mouse.jpg"
     },
     {
       "id": "11",
-      "title": "Товар 11",
+      "title": "Old Naked Rabbit",
       "vendor_code": "44411e",
-      "description": "Описание 1",
+      "description": "He is rumored to be wiser even than The Tree",
       "price": 1100,
-      "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/1_6.png"
+      "img": "img/rabbit.jpg"
     }
   ]
