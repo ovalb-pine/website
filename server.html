@@ -9,6 +9,7 @@
 
   <body>
     <div class="container">
+      <span class="hamburger">☰</span>
     <div id="nav-placeholder" class="navigation"></div>
     <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
     <div class="content">
@@ -69,6 +70,11 @@
     </div>
     <button onclick="topFunction()" id="btn" title="Go to top"></button>  
     </div>
+    <script>document.querySelector('.hamburger').addEventListener('click', function () {
+      const navMenu = document.querySelector('nav ul');
+      navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+    </script>
     <script src="buttons.js"></script>
     <script src="navigation.js"></script>    
     </body>

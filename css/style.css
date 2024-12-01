@@ -62,35 +62,6 @@ ul li {
   width: 100%;
 }
 
-.passport-overlay {
-  position: relative;
-  display: inline-block;
-  max-width: 500px; /* Set a max width for responsiveness */
-  width: 100%; /* Allow it to scale with window */
-}
-
-.passport-bg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.passport-text {
-  position: absolute;
-  font-size: 1em;
-  color: black;
-  transform: translate(-50%, -50%);
-  width: 100%;
-}
-
-.passport-photo {
-  position: absolute;
-  width: 28%;
-  height: 24%;
-  top: 73%;
-  left: 19%;
-  transform: translate(-50%, -50%);
-}
 
 .button {
   position: sticky;
@@ -279,7 +250,9 @@ img {
     color: rgb(105, 138, 183);
     font-size: 20px;
   }
-
+  .bookmark-row {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+  }
 
   .navigation {
     width: 100%;

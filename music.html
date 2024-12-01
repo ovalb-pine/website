@@ -9,6 +9,7 @@
 
   <body>
     <div class="container">
+        <span class="hamburger">☰</span>
       <div id="nav-placeholder" class="navigation"></div>
       <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
       <div class="content" style="float:left">
@@ -97,7 +98,11 @@
         ???
       </div>
       <button onclick="topFunction()" id="btn" title="Go to top"></button>
-
+      <script>document.querySelector('.hamburger').addEventListener('click', function () {
+        const navMenu = document.querySelector('nav ul');
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+      </script>
       <script src="buttons.js"></script>
       <script src="navigation.js"></script>    
     </div>
