@@ -14,21 +14,25 @@
     <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
     <div class="content">
     <h1>Forms</h1>
-      <h3>Personal Information</h3>
+    <div class="bookmark-row">
+      <a href="#personal" style=" margin: 0 20px;">Personal information</a> |
+      <a href="#memory" style=" margin: 0 20px;">Leave a Memory</a>
+    </div>
+      <h3 id="personal">Personal Information</h3>
       <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
-        <p>For search engine:<input type="hidden" name="q" value="search"></p>
+        <p><input type="hidden" name="q" value="search"></p>
         <p>Last Name: <input type="Text" name="last_name" class="button field" value="Efremova"></p>
         <p>First Name: <input type="Text" name="first_name" class="button field" value="Maria"></p>
         <p>Group: <input type="Number" name="group" class="button field" value="5"></p>
         <p>Mobile Phone: <input type="Number" name="phone_number" class="button field"></p>
         <p>E-mail:<input type="Text" name="email" class="button field" value="maalefremova@edu.hse.ru"></p>
-        <p>Date: <input type="date" name="user_date" class="button field" value="2024-11-06"></p>
+        <p>Date: <input type="date" name="user_date" class="button field" value="2024-12-04"></p>
         <p align="right">
           <input type="Reset" name="reset" class="button" value="Refresh">
           <input type="Submit" name="submit" class="button" value="Submit">
         </p>
       </form>
-        <h3>Leave a Memory</h3>
+        <h3 id="memory">Leave a Memory</h3>
         <form action="https://www.bing.com/search?" id="memory_form" name="memory_form" target="_blank">
         <input type="hidden" name="q" value="search">
           <p>Place of occurrence:

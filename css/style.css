@@ -59,6 +59,16 @@ ul li {
   align-self: center;
 }
 
+.content1 {
+  display: flex;
+  flex-direction: column; /* Align children vertically */
+  align-items: center; /* Horizontally center content */
+  justify-content: center; /* Vertically center content (if needed) */
+  text-align: center; /* Ensure text is centered */
+  min-height: 100vh; /* Ensure full vertical height if necessary */
+}
+
+
 .content2 {
   width: 100%;
 }
@@ -228,6 +238,84 @@ img {
   height: auto;
   border-radius: 5px;
 }
+
+.sort-options {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-options label {
+  font-size: 16px;
+  color: #fff; /* Adjust to match your theme */
+}
+
+.sort-options select {
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  padding: 16px;
+  align-content: center;
+}
+#node_for_insert {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2323235c;
+  border: 1px solid rgb(105, 138, 183);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  align-self: center;
+}
+
+.grid-item h4 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.grid-item p {
+  margin: 8px 0;
+  font-size: 0.9em;
+  color: #dbdbdb;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item .button-field-wrapper {
+  margin-top: auto; /* Pushes the field to the bottom */
+}
+
+.order-field .button.field {
+  margin-left: 0%;
+}
+
 
 @media (max-width: 600px) {
   .container {

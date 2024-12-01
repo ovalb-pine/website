@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/style.css" rel="stylesheet">
-    <title>Shop</title>
+    <title>Items</title>
 </head>
 
 <body>
@@ -13,12 +13,24 @@
     <span class="hamburger">☰</span>
     <div id="nav-placeholder" class="navigation"></div>
     <button onclick="bottomFunction()" id="btn" title="Go to bottom"></button>
+    
        <!--начало уникального содержания страницы-->
         <div class="content">
-            <h1 class='card-title text-center'>Shop</h5>
+            <h1>Items</h5>
+                <div class="sort-options">
+                    <label for="sort-select">Sort By:</label>
+                    <select id="sort-select" class="button field" style="margin-left: 0%; cursor: pointer;">
+                      <option value="name-asc">Name (A-Z)</option>
+                      <option value="name-desc">Name (Z-A)</option>
+                      <option value="price-asc">Price (Low to High)</option>
+                      <option value="price-desc">Price (High to Low)</option>
+                    </select>
+                  </div>
+                  <ul id="node_for_insert" class="items-list"></ul>
+                  
             <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
                 <input name="q" type="hidden" value="search">
-                <ul class="container" id="node_for_insert">
+                <ul class="grid-container" id="node_for_insert">
                 <!--начало генерируемого фрагмента кода -->
                 </ul>
                 <input class="button" style="margin-bottom: 5%" type="Submit" value="To cart">

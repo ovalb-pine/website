@@ -1,28 +1,65 @@
-async function getResponce() {
-    let responce = await fetch("shop.json")
-    console.log("responce:\n", responce, "\n /responce: \n")
-    let content = await responce.text()
-    console.log("await responce.text()\n", content)
-    content = JSON.parse(content)
-    content = content.slice(0, 9)
-    console.log("content.slice(0, 9)", content)
-    let key
-    for (key in content) {
-        console.log(content[key].id, content[key].title)
-        console.log(content[key])
+async function getResponse() {
+    let response = await fetch("shop.json");
+    let content = await response.json();
+    content = content.slice(0, 9); // Limit to first 9 items
+  
+    // Initial render
+    renderItems(content);
+  
+    // Add sorting functionality
+    const sortSelect = document.getElementById("sort-select");
+    sortSelect.addEventListener("change", function () {
+      const selectedOption = sortSelect.value;
+      const sortedContent = sortItems(content, selectedOption);
+      renderItems(sortedContent);
+    });
+  }
+  
+  // Function to render items dynamically
+  function renderItems(items) {
+    let node_for_insert = document.getElementById("node_for_insert");
+    node_for_insert.innerHTML = ""; // Clear existing items
+    
+    for (const item of items) {
+      // Create elements and append them
+      const listItem = document.createElement("li");
+      listItem.className = "grid-item";
+      listItem.style.width = "210px"; // You can move this to CSS for consistency
+  
+      listItem.innerHTML = `
+        <img style="width: 180px;" src="${item.img}" alt="${item.title}">
+        <h4>${item.title}</h4>
+        <p>${item.description}.</p>
+        <p><i>Price ${item.price}₽.</i></p>
+        <input type="hidden" name="vendor_code" value="${item.vendor_code}">
+        <p class="order-field" style="color: rgb(225,225,225); font-size: 1em;">Order 
+          <input class="button field" style="justify-content: center;" type="number" name="amount" value="0">
+        </p>
+      `;
+  
+      node_for_insert.appendChild(listItem);
     }
-
-    let node_for_insert = document.getElementById("node_for_insert")
-    for (key in content) {
-        node_for_insert.innerHTML += `
-        <li style="width: 210px" class="d-flex flex-column m-1 p-1 border bg-body">
-        <img style="width: 180px" class="align-self-center" src=${content[key].img}>
-        <h4 class="card-title">${content[key].title}</h5>
-        <p class="card-text\">${content[key].description}.</p>
-        <p><i>Price ${content[key].price}₽.</i></p>
-        <input type="hidden" name= "vendor_code" value=${content[key].vendor_code}>
-        <p class="card-text" >Order <input class="button field" type="number" name="amount" value="0"></p>
-        </li>`
-    }
-}
-getResponce()
+  }
+  
+  
+  // Sorting function
+  function sortItems(items, criteria) {
+    return items.slice().sort((a, b) => {
+      switch (criteria) {
+        case "name-asc":
+          return a.title.localeCompare(b.title);
+        case "name-desc":
+          return b.title.localeCompare(a.title);
+        case "price-asc":
+          return a.price - b.price;
+        case "price-desc":
+          return b.price - a.price;
+        default:
+          return 0;
+      }
+    });
+  }
+  
+  // Initialize the page
+  getResponse();
+  
