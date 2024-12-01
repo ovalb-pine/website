@@ -17,15 +17,29 @@ function highlightActiveLink() {
   });
 }
 
-// Fetch the navigation HTML
 fetch('nav.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('nav-placeholder').innerHTML = data;
 
-    // Highlight the active link initially when the page loads
-    highlightActiveLink();
+    // Check if the nav is present after insertion
+    const nav = document.querySelector('.navigation');
+    console.log(nav); // Log to verify if it's found
 
-    // Add an event listener for the 'hashchange' event to update the active link when hash changes
-    window.addEventListener('hashchange', highlightActiveLink);
-  });
+    if (nav) {
+      // Add event listener for toggling visibility
+      document.querySelector('.hamburger').addEventListener('click', function () {
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      });
+
+      // Highlight the active link when the page loads
+      highlightActiveLink();
+
+      // Add an event listener for 'hashchange' event to update active link
+      window.addEventListener('hashchange', highlightActiveLink);
+    } else {
+      console.error('Navigation element not found after insertion.');
+    }
+  })
+  .catch(error => console.error('Error fetching nav.html:', error));
+
