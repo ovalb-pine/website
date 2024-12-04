@@ -235,32 +235,6 @@ img {
   border-radius: 5px;
 }
 
-.sort-options {
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.sort-options label {
-  font-size: 16px;
-  color: #fff; /* Adjust to match your theme */
-}
-
-.sort-options select {
-  font-size: 14px;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-  padding: 16px;
-  align-content: center;
-  margin-bottom: -10%;
-}
 
 #node_for_insert {
   display: grid;
@@ -268,7 +242,6 @@ img {
   gap: 16px;
   padding: 16px;
 }
-
 
 .grid-item {
   display: flex;

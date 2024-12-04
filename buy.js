@@ -5,14 +5,6 @@ async function getResponse() {
   
     // Initial render
     renderItems(content);
-  
-    // Add sorting functionality
-    const sortSelect = document.getElementById("sort-select");
-    sortSelect.addEventListener("change", function () {
-      const selectedOption = sortSelect.value;
-      const sortedContent = sortItems(content, selectedOption);
-      renderItems(sortedContent);
-    });
   }
   
   // Function to render items dynamically
@@ -24,7 +16,7 @@ async function getResponse() {
       // Create elements and append them
       const listItem = document.createElement("li");
       listItem.className = "grid-item";
-      listItem.style.width = "210px"; // You can move this to CSS for consistency
+      listItem.style.width = "80%";
   
       listItem.innerHTML = `
         <img style="width: 180px;" src="${item.img}" alt="${item.title}">
@@ -33,31 +25,12 @@ async function getResponse() {
         <p><i>Price ${item.price}₽.</i></p>
         <input type="hidden" name="vendor_code" value="${item.vendor_code}">
         <p class="order-field" style="color: rgb(225,225,225); font-size: 1em;">Order 
-          <input class="button field" style="justify-content: center;" type="number" name="amount" value="0">
+          <input class="button field" style="justify-content: center; width:90%;" type="number" name="amount" value="0">
         </p>
       `;
   
       node_for_insert.appendChild(listItem);
     }
-  }
-  
-  
-  // Sorting function
-  function sortItems(items, criteria) {
-    return items.slice().sort((a, b) => {
-      switch (criteria) {
-        case "name-asc":
-          return a.title.localeCompare(b.title);
-        case "name-desc":
-          return b.title.localeCompare(a.title);
-        case "price-asc":
-          return a.price - b.price;
-        case "price-desc":
-          return b.price - a.price;
-        default:
-          return 0;
-      }
-    });
   }
   
   // Initialize the page
